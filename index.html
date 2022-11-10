@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado :)</title>
+    <style>
+        body{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    background-color: rgb(20,20,40);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+.container{
+    display: inline;
+    width: 100%;
+    text-align: center;
+    border-radius:10px;
+    width: 50%;
+
+}
+
+.dentro{
+    background-color: rgb(40,40,60);
+    margin: 100px;
+}
+.container button{
+    width: 100%;
+    background-color: greenyellow;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><p>By W3spr0</p></h1>
+        <div class="dentro">
+            <img src="" id="image" alt="">
+            <p id="numero"></p>
+            <button onclick="aleatorio()" id="jogar">Jogar</button>
+        </div>
+    </div>
+    <script>
+        let vezes = 0
+        var img = document.querySelector("#image");
+        function aleatorio(){
+            let rand = Math.floor(Math.random() * 6+ 1)
+            document.getElementById("numero").innerHTML = "<p>O numero que caiu no dado foi</p> <h1>"+rand+"</h1>"
+            if(rand == 1){
+                img.setAttribute('src', 'dado 1.png');
+            }
+            if(rand == 2){
+                img.setAttribute('src', 'dado 2.png');
+            }
+            if(rand == 3){
+                img.setAttribute('src', 'dado 3.png');
+            }
+            if(rand == 4){
+                img.setAttribute('src', 'dado 4.png');
+            }
+            if(rand == 5){
+                img.setAttribute('src', 'dado 5.png');
+            }
+            if(rand == 6){
+                img.setAttribute('src', 'dado 6.png');
+            }
+            vezes +=1
+            document.getElementById("jogar").innerText = "Voltar a jogar ("+vezes+")"
+            if(vezes > 4){
+                document.getElementById("jogar").innerText = "Vai quebrar o dedo de tanto clicar ("+vezes+")"
+            }else{
+                document.getElementById("jogar").innerText = "Voltar a jogar ("+vezes+")" 
+            }
+        }
+    </script>
+</body>
+</html>
